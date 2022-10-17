@@ -70,6 +70,42 @@ following:
     ]); // returns true
 ```
 
+For example, you want to check if a color is a nice color:
+
+```diff
+<?php
+
+declare(strict_types=1);
+
+namespace App\Enum;
+
+use OskarStark\Enum\Trait\Comparable;
+use OskarStark\Enum\Trait\ToArray;
+
+enum Color: string
+{
+    use Comparable;
+    use ToArray;
+
+    case RED = 'red';
+    case BLUE = 'blue';
+    case GREEN = 'green';
+    
+    public static function isNice(self $enum): bool
+    {
+        return $enum->equalsOneOf([
+            self::BLUE,
+            self::GREEN
+        ]);
+    }
+}
+```
+
+```php
+    App\Enum\Color::isNice(App\Enum\Color::RED); // returns false
+    App\Enum\Color::isNice(App\Enum\Color::BLUE); // returns true
+```
+
 ### `ToArray` Trait
 
 This `trait` gives you the possibility to get an enum as array like the following:
@@ -82,7 +118,7 @@ This `trait` gives you the possibility to get an enum as array like the followin
 
 #### For Non-Backed Enum
 ```php
-    App\Enum\Color::toArray(); // returns ['RED' => 'RED', 'BLUE' => 'BLUE']
+    App\Enum\NonBackedEnum::toArray(); // returns ['RED' => 'RED', 'BLUE' => 'BLUE']
 ```
 
 [ci_badge]: https://github.com/OskarStark/enum-helper/workflows/CI/badge.svg?branch=main
