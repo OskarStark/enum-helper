@@ -1,0 +1,39 @@
+{
+    "name": "oskarstark/trimmed-non-empty-string",
+    "type": "library",
+    "description": "This library provides a value object which ensures a trimmed non empty string.",
+    "keywords": [
+        "string",
+        "value-object"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oskar Stark",
+            "email": "oskarstark@googlemail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "symfony/string": "^5.0 || ^6.0",
+        "webmozart/assert": "^1.0"
+    },
+    "require-dev": {
+        "ergebnis/test-util": "^1.4",
+        "friendsofphp/php-cs-fixer": "2.18",
+        "phpunit/phpunit": "^8.5 || ^9.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "OskarStark\\Value\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OskarStark\\Value\\Tests\\": "tests/"
+        }
+    }
+}
