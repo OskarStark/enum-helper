@@ -40,10 +40,6 @@ jobs:
                     composer-options: "--no-scripts"
 
             -
-                name: "Run ergebnis/composer-normalize"
-                run: "composer normalize"
-
-            -
                 name: "Run friendsofphp/php-cs-fixer"
                 run: "vendor/bin/php-cs-fixer fix --diff --verbose"
 
