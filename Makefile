@@ -3,7 +3,7 @@ phpstan:
 	docker run --rm -it -w=/app -v ${PWD}:/app oskarstark/phpstan-ga:0.12.81 analyse src/ --level=7
 
 cs:
-	docker run --rm -it -w /app -v ${PWD}:/app oskarstark/php-cs-fixer-ga:2.18.2
+	symfony php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --diff --verbose
 
 test:
 	php vendor/bin/phpunit -v

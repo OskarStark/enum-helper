@@ -7,19 +7,45 @@ on:
 name: CI
 
 jobs:
-    php-cs-fixer:
-        name: PHP-CS-Fixer
+    coding-standards:
+        name: "Coding Standards"
 
-        runs-on: ubuntu-latest
+        runs-on: "ubuntu-latest"
+
+        strategy:
+            matrix:
+                php-version:
+                    - "8.1"
 
         steps:
             - name: "Checkout code"
               uses: actions/checkout@v3
 
-            - name: PHP-CS-Fixer
-              uses: docker://oskarstark/php-cs-fixer-ga:2.18.2
-              with:
-                  args: --diff --dry-run
+            -
+                name: "Install PHP with extensions"
+                uses: "shivammathur/setup-php@2.21.2"
+                with:
+                    coverage: "none"
+                    php-version: "${{ matrix.php-version }}"
+                    tools: "composer:v2"
+
+            -
+                name: "Validate composer.json"
+                run: "composer validate"
+
+            -
+                name: "Install dependencies with composer"
+                uses: "ramsey/composer-install@2.1.0"
+                with:
+                    composer-options: "--no-scripts"
+
+            -
+                name: "Run ergebnis/composer-normalize"
+                run: "composer normalize"
+
+            -
+                name: "Run friendsofphp/php-cs-fixer"
+                run: "vendor/bin/php-cs-fixer fix --diff --verbose"
 
     composer-normalize:
         name: composer-normalize
@@ -57,8 +83,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - '7.4'
-                    - '8.0'
+                    - '8.1'
                 dependencies:
                     - 'lowest'
                     - 'highest'

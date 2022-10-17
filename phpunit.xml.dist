@@ -8,7 +8,7 @@
          bootstrap="vendor/autoload.php"
 >
     <testsuites>
-        <testsuite name="trimmed-non-empty-string Test Suite">
+        <testsuite name="enum-helper Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

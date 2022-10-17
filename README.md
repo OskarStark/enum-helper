@@ -1,13 +1,17 @@
-# trimmed-non-empty-string
+# enum-helper
 
-This library provides a value object which ensures a trimmed non empty string.
+This library provides helpers for several enum operations:
+ * compare
+ * to array
+
+It also provides an abstract `EnumTestCase`.
 
 [![CI][ci_badge]][ci_link]
 
 ## Installation
 
 ```
-composer require oskarstark/trimmed-non-empty-string
+composer require oskarstark/enum-helper
 ```
 
 ## Usage
@@ -21,26 +25,12 @@ namespace App\Domain\Value\Name;
 
 use OskarStark\Value\TrimmedNonEmptyString;
 
-final class Name
+enum Color: string
 {
-    private string $value;
-
-    private function __construct(string $value
-   ) {
-        $this->value = TrimmedNonEmptyString::fromString($value)->toString();
-    }
-
-    public static function fromString(string $value): self
-    {
-        return new self($value);
-    }
-
-    public function toString(): string
-    {
-        return $this->value;
-    }
+    case RED = 'red';
+    case BLUE = 'blue';
 }
 ```
 
-[ci_badge]: https://github.com/OskarStark/trimmed-non-empty-string/workflows/CI/badge.svg?branch=main
-[ci_link]: https://github.com/OskarStark/trimmed-non-empty-string/actions?query=workflow:ci+branch:main
+[ci_badge]: https://github.com/OskarStark/enum-helper/workflows/CI/badge.svg?branch=main
+[ci_link]: https://github.com/OskarStark/enum-helper/actions?query=workflow:ci+branch:main

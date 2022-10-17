@@ -1,10 +1,9 @@
 {
-    "name": "oskarstark/trimmed-non-empty-string",
+    "name": "oskarstark/enum-helper",
     "type": "library",
-    "description": "This library provides a value object which ensures a trimmed non empty string.",
+    "description": "This library provides helpers for several enum operations",
     "keywords": [
-        "string",
-        "value-object"
+        "enum"
     ],
     "license": "MIT",
     "authors": [
@@ -14,26 +13,23 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "symfony/string": "^5.0 || ^6.0",
-        "webmozart/assert": "^1.0"
+        "php": ">=8.1"
     },
     "require-dev": {
-        "ergebnis/test-util": "^1.4",
-        "friendsofphp/php-cs-fixer": "2.18",
-        "phpunit/phpunit": "^8.5 || ^9.0"
+        "ergebnis/php-cs-fixer-config": "^4.10",
+        "phpunit/phpunit": "^9.5"
     },
     "config": {
         "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "OskarStark\\Value\\": "src/"
+            "OskarStark\\Enum\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "OskarStark\\Value\\Tests\\": "tests/"
+            "OskarStark\\Enum\\Tests\\": "tests/"
         }
     }
 }
