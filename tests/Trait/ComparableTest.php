@@ -58,4 +58,54 @@ final class ComparableTest extends TestCase
 
         self::assertFalse($enum->equals(NonBackedEnum::BAR));
     }
+
+    /**
+     * @test
+     */
+    public function equalsOneOfReturnsTrue(): void
+    {
+        $enum = Color::BLUE;
+
+        self::assertTrue($enum->equalsOneOf([
+            Color::BLUE,
+            Color::RED,
+        ]));
+    }
+
+    /**
+     * @test
+     */
+    public function equalsOneOfReturnsFalse(): void
+    {
+        $enum = Color::BLUE;
+
+        self::assertFalse($enum->equalsOneOf([
+            Color::RED,
+        ]));
+    }
+
+    /**
+     * @test
+     */
+    public function equalsOneOfReturnsTrueForNonBackedEnum(): void
+    {
+        $enum = NonBackedEnum::FOO;
+
+        self::assertTrue($enum->equalsOneOf([
+            NonBackedEnum::FOO,
+            NonBackedEnum::BAR,
+        ]));
+    }
+
+    /**
+     * @test
+     */
+    public function equalsOneOfReturnsFalseForNonBackedEnum(): void
+    {
+        $enum = NonBackedEnum::FOO;
+
+        self::assertFalse($enum->equalsOneOf([
+            NonBackedEnum::BAR,
+        ]));
+    }
 }
