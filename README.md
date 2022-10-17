@@ -60,7 +60,7 @@ This `trait` gives you the possibility to compare you `enum` with another one or
 following:
 
 ```php
-    App\Enum\Color::RED->equals(App\Enum\Color::BLUE); // returns false
+App\Enum\Color::RED->equals(App\Enum\Color::BLUE); // returns false
 ```
 
 ```php
@@ -72,7 +72,7 @@ following:
 
 For example, you want to check if a color is a nice color:
 
-```diff
+```php
 <?php
 
 declare(strict_types=1);
@@ -102,8 +102,8 @@ enum Color: string
 ```
 
 ```php
-    App\Enum\Color::RED->isNice(); // returns false
-    App\Enum\Color::BLUE->isNice(); // returns true
+App\Enum\Color::RED->isNice(); // returns false
+App\Enum\Color::BLUE->isNice(); // returns true
 ```
 
 ### `ToArray` Trait
@@ -113,12 +113,12 @@ This `trait` gives you the possibility to get an enum as array like the followin
 #### For Backed Enum
 
 ```php
-    App\Enum\Color::toArray(); // returns ['RED' => 'red', 'BLUE' => 'blue']
+App\Enum\Color::toArray(); // returns ['RED' => 'red', 'BLUE' => 'blue']
 ```
 
 #### For Non-Backed Enum
 ```php
-    App\Enum\NonBackedEnum::toArray(); // returns ['RED' => 'RED', 'BLUE' => 'BLUE']
+App\Enum\NonBackedEnum::toArray(); // returns ['RED' => 'RED', 'BLUE' => 'BLUE']
 ```
 
 [ci_badge]: https://github.com/OskarStark/enum-helper/workflows/CI/badge.svg?branch=main
