@@ -1,0 +1,21 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 2
+			path: tests/Fixture/Color.php
+
+		-
+			message: "#^Access to an undefined property OskarStark\\\\Enum\\\\Tests\\\\Fixture\\\\NonBackedEnum\\:\\:\\$value\\.$#"
+			count: 1
+			path: tests/Fixture/NonBackedEnum.php
+
+		-
+			message: "#^Instanceof between OskarStark\\\\Enum\\\\Tests\\\\Fixture\\\\NonBackedEnum and BackedEnum will always evaluate to false\\.$#"
+			count: 1
+			path: tests/Fixture/NonBackedEnum.php
+
+		-
+			message: "#^Instanceof between OskarStark\\\\Enum\\\\Tests\\\\Fixture\\\\NonBackedEnum\\:\\:BAR\\|OskarStark\\\\Enum\\\\Tests\\\\Fixture\\\\NonBackedEnum\\:\\:FOO and BackedEnum will always evaluate to false\\.$#"
+			count: 1
+			path: tests/Fixture/NonBackedEnum.php
