@@ -91,9 +91,9 @@ enum Color: string
     case BLUE = 'blue';
     case GREEN = 'green';
     
-    public static function isNice(self $enum): bool
+    public function isNice(): bool
     {
-        return $enum->equalsOneOf([
+        return self::equalsOneOf([
             self::BLUE,
             self::GREEN
         ]);
@@ -102,8 +102,8 @@ enum Color: string
 ```
 
 ```php
-    App\Enum\Color::isNice(App\Enum\Color::RED); // returns false
-    App\Enum\Color::isNice(App\Enum\Color::BLUE); // returns true
+    App\Enum\Color::RED->isNice(); // returns false
+    App\Enum\Color::BLUE->isNice(); // returns true
 ```
 
 ### `ToArray` Trait
