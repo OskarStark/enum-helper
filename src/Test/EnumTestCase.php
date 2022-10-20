@@ -65,6 +65,30 @@ abstract class EnumTestCase extends TestCase
     }
 
     /**
+     * @test
+     */
+    final public function equals(): void
+    {
+        $class = static::getClass();
+
+        if (!\in_array(Comparable::class, array_keys((new \ReflectionClass($class))->getTraits()), true)
+            || 1 === (is_countable($class::cases()) ? \count($class::cases()) : 0)
+        ) {
+            self::assertTrue(true);
+
+            return;
+        }
+
+        $allValues = $class::cases();
+
+        $valueOne = current(\array_slice($allValues, 0, 1));
+        $valueTwo = current(\array_slice($allValues, 1, 1));
+
+        self::assertTrue($valueOne->equals($valueOne));
+        self::assertFalse($valueOne->equals($valueTwo));
+    }
+
+    /**
      * @phpstan-return class-string
      */
     abstract protected static function getClass(): string;

@@ -15,7 +15,6 @@ namespace OskarStark\Enum\Tests\Test;
 
 use OskarStark\Enum\Test\EnumTestCase;
 use OskarStark\Enum\Tests\Fixture\Color;
-use OskarStark\Enum\Tests\Fixture\NonBackedEnum;
 
 final class EnumTestCaseTest extends EnumTestCase
 {
