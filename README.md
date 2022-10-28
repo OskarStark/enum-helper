@@ -64,6 +64,10 @@ App\Enum\Color::RED->equals(App\Enum\Color::BLUE); // returns false
 ```
 
 ```php
+App\Enum\Color::RED->notEquals(App\Enum\Color::RED); // returns false
+```
+
+```php
     App\Enum\Color::RED->equalsOneOf([
         App\Enum\Color::BLUE,
         App\Enum\Color::RED,

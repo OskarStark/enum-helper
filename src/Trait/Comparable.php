@@ -24,6 +24,11 @@ trait Comparable
         return $enum->name === $this->name;
     }
 
+    public function notEquals(self $enum): bool
+    {
+        return !$this->equals($enum);
+    }
+
     /**
      * @param self[] $enums
      */
