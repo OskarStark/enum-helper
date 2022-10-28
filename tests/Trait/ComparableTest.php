@@ -22,6 +22,46 @@ final class ComparableTest extends TestCase
     /**
      * @test
      */
+    public function notEqualsReturnsTrue(): void
+    {
+        $enum = Color::BLUE;
+
+        self::assertTrue($enum->notEquals(Color::RED));
+    }
+
+    /**
+     * @test
+     */
+    public function notEqualsReturnsFalse(): void
+    {
+        $enum = Color::BLUE;
+
+        self::assertFalse($enum->notEquals(Color::BLUE));
+    }
+
+    /**
+     * @test
+     */
+    public function notEqualsReturnsTrueForNonBackedEnum(): void
+    {
+        $enum = NonBackedEnum::FOO;
+
+        self::assertTrue($enum->notEquals(NonBackedEnum::BAR));
+    }
+
+    /**
+     * @test
+     */
+    public function notEqualsReturnsFalseForNonBackedEnum(): void
+    {
+        $enum = NonBackedEnum::FOO;
+
+        self::assertFalse($enum->notEquals(NonBackedEnum::FOO));
+    }
+
+    /**
+     * @test
+     */
     public function equalsReturnsTrue(): void
     {
         $enum = Color::BLUE;
