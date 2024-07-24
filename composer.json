@@ -16,7 +16,7 @@
         "php": ">=8.2"
     },
     "require-dev": {
-        "ergebnis/php-cs-fixer-config": "^4.10",
+        "ergebnis/php-cs-fixer-config": "^5",
         "phpstan/phpstan": "^1.8",
         "phpunit/phpunit": "^9.5"
     },
