@@ -15,7 +15,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "8.1"
+                    - "8.2"
 
         steps:
             - name: "Checkout code"
@@ -51,7 +51,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - "8.1"
+                    - "8.2"
 
         steps:
             -
@@ -84,7 +84,7 @@ jobs:
         strategy:
             matrix:
                 php-version:
-                    - '8.1'
+                    - '8.2'
                 dependencies:
                     - 'lowest'
                     - 'highest'

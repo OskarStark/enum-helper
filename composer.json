@@ -13,12 +13,12 @@
         }
     ],
     "require": {
-        "php": ">=8.1"
+        "php": ">=8.2"
     },
     "require-dev": {
-        "ergebnis/php-cs-fixer-config": "^4.10",
-        "phpstan/phpstan": "^1.8",
-        "phpunit/phpunit": "^9.5"
+        "ergebnis/php-cs-fixer-config": "^5.16",
+        "phpstan/phpstan": "^1.11.8",
+        "phpunit/phpunit": "^9.6.20"
     },
     "config": {
         "sort-packages": true
