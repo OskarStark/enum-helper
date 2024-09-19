@@ -16,7 +16,7 @@ namespace OskarStark\Enum\Trait;
 trait ToArray
 {
     /**
-     * @return array<string,int|string>
+     * @return array<string, int|string>
      */
     public static function toArray(): array
     {
