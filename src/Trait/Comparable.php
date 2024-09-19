@@ -42,4 +42,9 @@ trait Comparable
 
         return false;
     }
+
+    public function notEqualsOneOf(array $enums): bool
+    {
+        return !$this->equalsOneOf($enums);
+    }
 }
