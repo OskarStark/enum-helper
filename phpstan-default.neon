@@ -2,9 +2,7 @@ includes:
     - phpstan-default-baseline.neon
 
 parameters:
-    inferPrivatePropertyTypeFromConstructor: true
-    level: 8
+    level: max
     paths:
         - src
         - tests
-    checkGenericClassInNonGenericObjectType: false
