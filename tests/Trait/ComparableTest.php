@@ -177,11 +177,11 @@ final class ComparableTest extends TestCase
     /**
      * @test
      */
-    public function notEqualsOneOfReturnsTrueForNonBackedEnum(): void
+    public function notEqualsOneOfReturnsFalseForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
 
-        self::assertTrue($enum->notEqualsOneOf([
+        self::assertFalse($enum->notEqualsOneOf([
             NonBackedEnum::FOO,
             NonBackedEnum::BAR,
         ]));
@@ -190,11 +190,11 @@ final class ComparableTest extends TestCase
     /**
      * @test
      */
-    public function notEqualsOneOfReturnsFalseForNonBackedEnum(): void
+    public function notEqualsOneOfReturnsTrueForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
 
-        self::assertFalse($enum->notEqualsOneOf([
+        self::assertTrue($enum->notEqualsOneOf([
             NonBackedEnum::BAR,
         ]));
     }
