@@ -42,4 +42,12 @@ trait Comparable
 
         return false;
     }
+
+    /**
+     * @param self[] $enums
+     */
+    public function notEqualsOneOf(array $enums): bool
+    {
+        return !$this->equalsOneOf($enums);
+    }
 }
