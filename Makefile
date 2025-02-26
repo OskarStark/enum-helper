@@ -13,4 +13,4 @@ cs:
 
 .PHONY: test
 test:
-	php vendor/bin/phpunit
+	php vendor/bin/phpunit --display-phpunit-deprecations

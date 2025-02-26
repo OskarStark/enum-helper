@@ -14,13 +14,12 @@ declare(strict_types=1);
 namespace OskarStark\Enum\Test;
 
 use OskarStark\Enum\Trait\Comparable;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 abstract class EnumTestCase extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     final public function numberOfValues(): void
     {
         $class = static::getClass();
@@ -31,9 +30,7 @@ abstract class EnumTestCase extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     final public function equalsOneOf(): void
     {
         $class = static::getClass();
@@ -64,9 +61,7 @@ abstract class EnumTestCase extends TestCase
         self::assertFalse($valueOne->equalsOneOf($values));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     final public function equals(): void
     {
         $class = static::getClass();
@@ -88,9 +83,7 @@ abstract class EnumTestCase extends TestCase
         self::assertFalse($valueOne->equals($valueTwo));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     final public function notEquals(): void
     {
         $class = static::getClass();
