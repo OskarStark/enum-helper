@@ -6,16 +6,16 @@
     colors="true"
     bootstrap="vendor/autoload.php"
 >
-    <testsuites>
-        <testsuite name="enum-helper Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-
     <source>
         <include>
             <directory>src</directory>
         </include>
     </source>
+
+    <testsuites>
+        <testsuite name="enum-helper Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
 
 </phpunit>
