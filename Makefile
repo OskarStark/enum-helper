@@ -13,4 +13,4 @@ cs:
 
 .PHONY: test
 test:
-	php vendor/bin/phpunit -v
+	php vendor/bin/phpunit

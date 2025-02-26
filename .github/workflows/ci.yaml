@@ -111,4 +111,4 @@ jobs:
                   composer-options: "--prefer-dist"
 
             - name: Run tests
-              run: vendor/bin/phpunit -v
+              run: vendor/bin/phpunit
