@@ -15,13 +15,12 @@ namespace OskarStark\Enum\Tests\Trait;
 
 use OskarStark\Enum\Tests\Fixture\Color;
 use OskarStark\Enum\Tests\Fixture\NonBackedEnum;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class ToArrayTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function toArrayWithBackendEnumString(): void
     {
         self::assertSame(
@@ -33,9 +32,7 @@ final class ToArrayTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function toArrayWithNonBackendEnumString(): void
     {
         self::assertSame(

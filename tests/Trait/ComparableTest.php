@@ -15,13 +15,12 @@ namespace OskarStark\Enum\Tests\Trait;
 
 use OskarStark\Enum\Tests\Fixture\Color;
 use OskarStark\Enum\Tests\Fixture\NonBackedEnum;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 final class ComparableTest extends TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsReturnsTrue(): void
     {
         $enum = Color::BLUE;
@@ -29,9 +28,7 @@ final class ComparableTest extends TestCase
         self::assertTrue($enum->notEquals(Color::RED));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsReturnsFalse(): void
     {
         $enum = Color::BLUE;
@@ -39,9 +36,7 @@ final class ComparableTest extends TestCase
         self::assertFalse($enum->notEquals(Color::BLUE));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsReturnsTrueForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -49,9 +44,7 @@ final class ComparableTest extends TestCase
         self::assertTrue($enum->notEquals(NonBackedEnum::BAR));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsReturnsFalseForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -59,9 +52,7 @@ final class ComparableTest extends TestCase
         self::assertFalse($enum->notEquals(NonBackedEnum::FOO));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsReturnsTrue(): void
     {
         $enum = Color::BLUE;
@@ -69,9 +60,7 @@ final class ComparableTest extends TestCase
         self::assertTrue($enum->equals(Color::BLUE));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsReturnsFalse(): void
     {
         $enum = Color::BLUE;
@@ -79,9 +68,7 @@ final class ComparableTest extends TestCase
         self::assertFalse($enum->equals(Color::RED));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsReturnsTrueForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -89,9 +76,7 @@ final class ComparableTest extends TestCase
         self::assertTrue($enum->equals(NonBackedEnum::FOO));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsReturnsFalseForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -99,9 +84,7 @@ final class ComparableTest extends TestCase
         self::assertFalse($enum->equals(NonBackedEnum::BAR));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsOneOfReturnsTrue(): void
     {
         $enum = Color::BLUE;
@@ -112,9 +95,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsOneOfReturnsFalse(): void
     {
         $enum = Color::BLUE;
@@ -124,9 +105,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsOneOfReturnsTrueForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -137,9 +116,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function equalsOneOfReturnsFalseForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -149,9 +126,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsOneOfReturnsTrue(): void
     {
         $enum = Color::BLUE;
@@ -161,9 +136,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsOneOfReturnsFalse(): void
     {
         $enum = Color::BLUE;
@@ -174,9 +147,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsOneOfReturnsFalseForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
@@ -187,9 +158,7 @@ final class ComparableTest extends TestCase
         ]));
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function notEqualsOneOfReturnsTrueForNonBackedEnum(): void
     {
         $enum = NonBackedEnum::FOO;
