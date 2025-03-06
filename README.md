@@ -56,7 +56,7 @@ enum Color: string
 
 ### `Comparable` Trait
 
-This `trait` gives you the possibility to compare you `enum` with another one or a collection of enums like the
+This `trait` gives you the possibility to compare your `enum` with another one or a collection of enums like the
 following:
 
 ```php
@@ -68,10 +68,10 @@ App\Enum\Color::RED->notEquals(App\Enum\Color::RED); // returns false
 ```
 
 ```php
-    App\Enum\Color::RED->equalsOneOf([
-        App\Enum\Color::BLUE,
-        App\Enum\Color::RED,
-    ]); // returns true
+App\Enum\Color::RED->equalsOneOf([
+    App\Enum\Color::BLUE,
+    App\Enum\Color::RED,
+]); // returns true
 ```
 
 For example, you want to check if a color is a nice color:
