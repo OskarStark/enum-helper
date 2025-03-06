@@ -32,7 +32,7 @@ enum Color: string
 }
 ```
 
-You can use the following trait,
+You can use the following traits:
 
 ```diff
 <?php
