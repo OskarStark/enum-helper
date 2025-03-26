@@ -20,6 +20,9 @@
         "phpstan/phpstan": "^1.11.8",
         "phpunit/phpunit": "^10.5"
     },
+    "conflict": {
+        "phpunit/phpunit": "<10"
+    },
     "config": {
         "sort-packages": true
     },
