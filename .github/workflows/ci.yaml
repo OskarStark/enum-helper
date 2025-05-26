@@ -35,7 +35,7 @@ jobs:
 
             -
                 name: "Install dependencies with composer"
-                uses: "ramsey/composer-install@3.1.0"
+                uses: "ramsey/composer-install@3.1.1"
                 with:
                     composer-options: "--no-scripts"
 
@@ -68,7 +68,7 @@ jobs:
 
             -
                 name: "Install dependencies with composer"
-                uses: "ramsey/composer-install@3.1.0"
+                uses: "ramsey/composer-install@3.1.1"
 
             -
                 name: "Run a static code analysis with phpstan/phpstan and default configuration"
@@ -105,7 +105,7 @@ jobs:
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
             - name: "Composer install"
-              uses: "ramsey/composer-install@3.1.0"
+              uses: "ramsey/composer-install@3.1.1"
               with:
                   dependency-versions: "${{ matrix.dependencies }}"
                   composer-options: "--prefer-dist"
