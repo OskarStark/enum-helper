@@ -17,6 +17,8 @@ trait ToArray
 {
     /**
      * @return array<string, int|string>
+     *
+     * @phpstan-return ($this is \BackedEnum ? array<string, string|int> : array<string, string>)
      */
     public static function toArray(): array
     {
