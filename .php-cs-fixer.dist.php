@@ -13,7 +13,7 @@ HEADER;
 
 use Ergebnis\PhpCsFixer;
 
-$config = PhpCsFixer\Config\Factory::fromRuleSet(new PhpCsFixer\Config\RuleSet\Php82($header), [
+$config = PhpCsFixer\Config\Factory::fromRuleSet(new PhpCsFixer\Config\RuleSet\Php81($header), [
     'blank_line_before_statement' => [
         'statements' => [
             'break',

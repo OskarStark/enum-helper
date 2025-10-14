@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Architecture Overview
 
-This is a PHP library that provides enum helpers and traits for PHP 8.2+ applications. The library is organized as follows:
+This is a PHP library that provides enum helpers and traits for PHP 8.1+ applications. The library is organized as follows:
 
 ### Core Components
 
@@ -29,7 +29,7 @@ This is a PHP library that provides enum helpers and traits for PHP 8.2+ applica
 
 ### Key Design Decisions
 
-- Uses PHP 8.2+ enum features and requires minimum PHP 8.2
+- Uses PHP 8.1+ enum features and requires minimum PHP 8.1
 - Traits are designed to work with both `BackedEnum` and regular PHP enums
 - The `Comparable` trait checks if an enum is backed and compares by value, otherwise compares by name
 - The `ToArray` trait returns associative arrays with case names as keys
@@ -47,4 +47,4 @@ This is a PHP library that provides enum helpers and traits for PHP 8.2+ applica
 GitHub Actions workflow runs:
 1. Coding standards check (PHP-CS-Fixer)
 2. Static analysis (PHPStan at max level)
-3. Tests with both lowest and highest dependencies on PHP 8.2
+3. Tests with both lowest and highest dependencies on PHP 8.1 and 8.2
