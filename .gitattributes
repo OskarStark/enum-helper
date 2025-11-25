@@ -2,3 +2,6 @@
 md export-ignore
 Makefile export-ignore
 phpunit.xml.dist export-ignore
+phpstan-default.neon export-ignore
+phpstan-default-baseline.neon export-ignore
+tests export-ignore
