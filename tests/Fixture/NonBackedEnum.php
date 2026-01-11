@@ -20,7 +20,6 @@ enum NonBackedEnum
 {
     use Comparable;
     use ToArray;
-
     case FOO;
     case BAR;
 }

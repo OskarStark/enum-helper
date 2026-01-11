@@ -20,7 +20,6 @@ enum Color: string
 {
     use Comparable;
     use ToArray;
-
     case RED = 'red';
     case BLUE = 'blue';
 }
