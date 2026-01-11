@@ -30,7 +30,7 @@ trait Comparable
     }
 
     /**
-     * @param list<self> $enums
+     * @param array<self> $enums
      */
     public function equalsOneOf(array $enums): bool
     {
@@ -44,7 +44,7 @@ trait Comparable
     }
 
     /**
-     * @param list<self> $enums
+     * @param array<self> $enums
      */
     public function notEqualsOneOf(array $enums): bool
     {
