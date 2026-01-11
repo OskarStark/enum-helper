@@ -30,6 +30,7 @@ trait ToArray
 
                 continue;
             }
+
             $choices[$case->name] = $case->name;
         }
 
