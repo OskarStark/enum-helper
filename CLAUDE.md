@@ -11,8 +11,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Code Quality
 - Run PHP-CS-Fixer: `vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --diff --verbose`
-- Run PHPStan analysis: `vendor/bin/phpstan analyse --configuration=phpstan-default.neon`
-- Generate PHPStan baseline: `vendor/bin/phpstan analyze --configuration=phpstan-default.neon --generate-baseline=phpstan-default-baseline.neon`
+- Run PHPStan analysis: `vendor/bin/phpstan analyse --configuration=phpstan.neon.dist`
+- Generate PHPStan baseline: `vendor/bin/phpstan analyze --configuration=phpstan.neon.dist --generate-baseline=phpstan-baseline.neon`
 
 ## Architecture Overview
 

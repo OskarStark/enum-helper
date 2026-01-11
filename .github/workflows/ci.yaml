@@ -74,7 +74,7 @@ jobs:
 
             -
                 name: "Run a static code analysis with phpstan/phpstan and default configuration"
-                run: "vendor/bin/phpstan analyse --configuration=phpstan-default.neon --no-progress"
+                run: "vendor/bin/phpstan analyse --configuration=phpstan.neon.dist --no-progress"
 
     tests:
         name: "PHP ${{ matrix.php-version }} + ${{ matrix.dependencies }}"
