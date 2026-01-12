@@ -11,6 +11,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Code Quality
 - Run PHP-CS-Fixer: `vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --diff --verbose`
+  - Note: In CI, PHP-CS-Fixer runs without the `--config` flag as it auto-detects the config file
 - Run PHPStan analysis: `vendor/bin/phpstan analyse --configuration=phpstan.neon.dist`
 - Generate PHPStan baseline: `vendor/bin/phpstan analyze --configuration=phpstan.neon.dist --generate-baseline=phpstan-baseline.neon`
 
@@ -40,11 +41,14 @@ This is a PHP library that provides enum helpers and traits for PHP 8.1+ applica
 - PHPUnit 10+ is used for testing
 - Tests are located in `tests/` with fixtures in `tests/Fixture/`
 - The abstract `EnumTestCase` provides standard enum tests that can be extended
+  - When extending `EnumTestCase`, implement `getClass()` to return the FQCN of the enum being tested
+  - Implement `getNumberOfValues()` to return the expected number of enum cases
+  - The test case automatically tests `equals()`, `notEquals()`, `equalsOneOf()`, and case count if `Comparable` trait is used
 - Tests use PHPUnit attributes (`#[Test]`) instead of annotations
 
 ### CI/CD
 
 GitHub Actions workflow runs:
-1. Coding standards check (PHP-CS-Fixer)
-2. Static analysis (PHPStan at max level)
-3. Tests with both lowest and highest dependencies on PHP 8.1 and 8.2
+1. Coding standards check (PHP-CS-Fixer) on PHP 8.1 and 8.2
+2. Static analysis (PHPStan at max level) on PHP 8.1 and 8.2
+3. Tests on PHP 8.1 and 8.2 with both lowest and highest dependency versions (4 test matrix combinations per PHP version)
