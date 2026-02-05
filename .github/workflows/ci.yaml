@@ -44,6 +44,27 @@ jobs:
                 name: "Run friendsofphp/php-cs-fixer"
                 run: "vendor/bin/php-cs-fixer fix --diff --verbose"
 
+    rector:
+        name: "Rector"
+
+        runs-on: "ubuntu-latest"
+
+        steps:
+            - name: "Checkout"
+              uses: "actions/checkout@v6"
+
+            - name: "Install PHP with extensions"
+              uses: "shivammathur/setup-php@2.36.0"
+              with:
+                  coverage: "none"
+                  php-version: "8.2"
+
+            - name: "Install dependencies with composer"
+              uses: "ramsey/composer-install@3.1.1"
+
+            - name: "Run rector/rector"
+              run: "vendor/bin/rector --dry-run"
+
     static-code-analysis:
         name: "Static Code Analysis"
 

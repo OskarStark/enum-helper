@@ -17,8 +17,9 @@
     },
     "require-dev": {
         "ergebnis/php-cs-fixer-config": "^6.58",
-        "phpstan/phpstan": "^1.11.8",
-        "phpunit/phpunit": "^10.5"
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^10.5",
+        "rector/rector": "^2.3"
     },
     "conflict": {
         "phpunit/phpunit": "<10"
