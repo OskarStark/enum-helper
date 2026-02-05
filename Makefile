@@ -11,6 +11,10 @@ static-code-analysis-baseline: vendor ## Generates a baseline for static code an
 cs:
 	symfony php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --diff --verbose
 
+.PHONY: rector
+rector:
+	symfony php vendor/bin/rector
+
 .PHONY: test
 test:
 	php vendor/bin/phpunit
