@@ -36,7 +36,7 @@ jobs:
 
             -
                 name: "Install dependencies with composer"
-                uses: "ramsey/composer-install@3.1.1"
+                uses: "ramsey/composer-install@3.2.0"
                 with:
                     composer-options: "--no-scripts"
 
@@ -60,7 +60,7 @@ jobs:
                   php-version: "8.2"
 
             - name: "Install dependencies with composer"
-              uses: "ramsey/composer-install@3.1.1"
+              uses: "ramsey/composer-install@3.2.0"
 
             - name: "Run rector/rector"
               run: "vendor/bin/rector --dry-run"
@@ -91,7 +91,7 @@ jobs:
 
             -
                 name: "Install dependencies with composer"
-                uses: "ramsey/composer-install@3.1.1"
+                uses: "ramsey/composer-install@3.2.0"
 
             -
                 name: "Run a static code analysis with phpstan/phpstan and default configuration"
@@ -129,7 +129,7 @@ jobs:
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
             - name: "Composer install"
-              uses: "ramsey/composer-install@3.1.1"
+              uses: "ramsey/composer-install@3.2.0"
               with:
                   dependency-versions: "${{ matrix.dependencies }}"
                   composer-options: "--prefer-dist"
